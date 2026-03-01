@@ -1,0 +1,215 @@
+* {box-sizing: border-box;}
+body {font-family: Arial, sans-serif;
+      font-size: 14px;}
+/*phan header*/
+.header {display:flex;
+         align-items: center;
+		 background-color:blue;
+		 height:220px;}
+	
+.header img {float:left;
+            width:110px;
+			margin-left:60px;}
+
+.header h1 {color:white;
+            width:100%;
+			text-align:center;
+			font-size:40pt;text-shadow: 4px 4px 8px #000000;}
+			
+/*phan menu nav*/
+.nav {overflow: hidden;
+       background-color:#2cd386;
+	   height:45px;}
+	   
+.nav ul {list-style-type: none;
+         margin:0px;
+		 padding:0px;}
+		 
+.nav a {float: left;
+         display: block;
+		 color:black;
+		 text-align: center;
+		 padding: 14px 10px;
+		 text-decoration: none;}
+.nav a:hover {background-color:white;
+                 color:#2cd386;}
+
+
+/*phan footer*/
+.footer {background-color:blue;
+         padding: 12px 0;
+		 width:100%;
+		 display:flex;
+		 justify-content: space-around;
+		 align-items:center;}
+.footer p {margin-left:100px;
+            color:white;}
+.footer img {width:90px;}
+
+/*phan noi dung chinh/conten*/
+.content {display:flex; flex-grow:1;}
+/*phan cot 1*/
+.col1 {width:25%;background-color:#f1f1f1;
+        flex-direction:column;
+		display:flex;
+		align-items:center;}
+.gallery {margin: 5px;
+          border: 1px solid #ccc;
+		  float: left;
+		  width: 180px;}
+.gallery:hover {border: 1px solid #777;}
+.gallery img {width: 100%;height: auto;}
+.desc {padding: 15px;text-align:center;}
+
+
+
+/*phan cot 2*/
+.col2 {width:50%; padding:16px;}
+.col2 img {float:right;width:350px;
+             padding-left:14px;}
+.col2 h3 {text-align:center;
+            color;tomato;}
+.col2 p {text-align:justify;
+           font-size:14pt;
+		   line-height:1.5;}
+.dropcap {float:left;
+          font-size:60px;
+		  color:green;
+		  line-height:40px;}
+/*phan cot 3*/
+.col3 {width:25%;background-color:#f1f1f1;display:flex;flex-direction:column;align-items:center;}
+
+/* --- phan css bo sung de tuong thich man hinh (responsive) --- */
+/* 1. thiet lap cho may tinh bang (teblet - man hinh duoi 992px) */
+@media screen and (max-width: 992px) {
+	.content {
+		flex-wrap: wrap; /*cho phep cac cot rot dong */
+	}
+	.col1, .col3 {
+		width: 50%; /*cot 1 va cot 3 chia doi hang */
+	}
+	.col2 {
+		width: 100%; /* cot noi dung [chim tron 1 hang*/
+		order: -1; /* dua noi dung chinh tren dau de uu tien doc */
+	}
+	.header h1 {
+		font-size: 25pt; /* thu nho chu tieu de */
+	}
+}
+/* 2. thiet lap cho dien thoai (mobile - man hinh duoi 600px) */
+@media screen and (max-width: 600px) {
+	.header {
+		flex-direction: column; /*chuyen logo va chu thanh hang doc */
+		height: auto;
+	padding: 20px 0;}
+	.header img {
+		margin-left: 0;
+	margin-bottom: 10px;}
+	.header h1 {font-size: 18pt;}
+	.nav ul {
+		flex-direction: column; /*menu dan hang doc*/
+	text-align: center;}
+	.nav {height: auto;}
+	.nav a {
+		float: none;
+		width: 100%;
+	border-bottom: 1px solid rgba (255,255,255,0.4);}
+	.col1, .col2, .col3 {
+		width: 100%; /*tat ca cac cot chim 100% chieu rong*/
+	}
+	.col2 img {
+		float: none; /*anh trong bai viet khong noi (float) nua ma giua */
+		width: 100%;
+		padding-left: 0;
+	margin-bottom: 15px;}
+	.footer {flex-direction: column;
+	text-align: center; }
+	.footer p {
+		margin-left: 0;
+	margin-bottom: 15px;}
+	/* dieu chinh vide youtube de khong bi chan man hinh*/
+	iframe {
+		width: 100% !important;
+	height: auto;}
+}
+	
+/* ===== TRANG ĐĂNG NHẬP (Bổ sung) ===== */
+
+.login-container {
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    min-height: 500px;
+}
+
+.login-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+    border-top: 5px solid blue;
+}
+
+.login-box h2 {
+    text-align: center;
+    color: blue;
+    margin-bottom: 25px;
+    font-size: 20pt;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14pt;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 12pt;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16pt;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
